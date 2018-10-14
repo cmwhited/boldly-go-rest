@@ -11,7 +11,7 @@ This service uses DynamoDB to persist data. Check out the [docs](https://aws.ama
 To access your AWS DynamoDB tables, you will need an AWS account with an IAM user that has access to Read, Write DynamoDB tables.
 Once the IAM user is created, get the access key and secret and store them in environment variables:
 
-- `AWS_ACCESS_KEY`: The IAM user access key
+- `AWS_ACCESS_KEY_ID`: The IAM user access key
 - `AWS_SECRET_KEY`: The IAM user secret
 
 ## Dependency Management
