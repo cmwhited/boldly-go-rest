@@ -41,12 +41,12 @@ run `dep ensure`; this will install necessary dependencies to the project and ge
         - `{bankId}` is the unique id of the bank.
     - CURL example
         ```bash
-        curl -XGET http://localhost:5002/api/v1/user/4b7b2def-e76e-48bf-993b-8ec2b193b855/bank/01e173f4-02a2-4310-a7cc-e2b919f13aac
+        curl -XGET http://localhost:5002/api/v1/user/test@test.com/bank/01e173f4-02a2-4310-a7cc-e2b919f13aac
         ```
     - Example Response:
         ```json
         {
-            "owningUserId": "4b7b2def-e76e-48bf-993b-8ec2b193b855",
+            "owningUserId": "test@test.com",
             "bankId": "01e173f4-02a2-4310-a7cc-e2b919f13aac",
             "bankName": "US Bank",
             "accountNumber": "2112"
@@ -57,7 +57,7 @@ run `dep ensure`; this will install necessary dependencies to the project and ge
     - Example Request Body
         ```json
         {
-        	"owningUserId": "4b7b2def-e76e-48bf-993b-8ec2b193b855",
+        	"owningUserId": "test@test.com",
         	"bankName": "BANK NAME",
         	"accountNumber": "1234"
         }
@@ -71,7 +71,7 @@ run `dep ensure`; this will install necessary dependencies to the project and ge
     - Example Response
         ```json
         {
-          "owningUserId": "4b7b2def-e76e-48bf-993b-8ec2b193b855",
+          "owningUserId": "test@test.com",
           "bankId": "b920cfc7-c455-4ac6-b856-f9d3a416d9d1",
           "bankName": "BANK NAME",
           "accountNumber": "1234"

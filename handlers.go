@@ -28,11 +28,10 @@ func PingHandler(w http.ResponseWriter, r *http.Request) {
 // Grab the owningUserId and bankId out of the route params and use them to get a Bank record
 func GetBankHandler(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
-	owningUserId := params["owningUserId"]              // get the owning user id from request route params
-	_owningUserId := uuid.FromStringOrNil(owningUserId) // convert string id to uuid
-	bankId := params["bankId"]                          // get the bank id from the request route params
-	_bankId := uuid.FromStringOrNil(bankId)             // convert bank id string to uuid
-	bank, err := GetBank(_owningUserId, _bankId)        // get bank record
+	owningUserId := params["owningUserId"]      // get the owning user id from request route params
+	bankId := params["bankId"]                  // get the bank id from the request route params
+	_bankId := uuid.FromStringOrNil(bankId)     // convert bank id string to uuid
+	bank, err := GetBank(owningUserId, _bankId) // get bank record
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

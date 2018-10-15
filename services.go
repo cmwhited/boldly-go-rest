@@ -18,12 +18,12 @@ func DoPing() Ping {
 
 // Get a unique Bank record by the owningUserId and bankId composite key.
 // Use the AWS DynamoDB service instance to query the UserBanks table in DynamoDB by the Primary & Sort key
-func GetBank(owningUserId, bankId uuid.UUID) (bank *Bank, err error) {
+func GetBank(owningUserId string, bankId uuid.UUID) (bank *Bank, err error) {
 	req := awsSvc.DynamoDbSvc().GetItemRequest(&dynamodb.GetItemInput{
 		TableName: aws.String("UserBanks"),
 		Key: map[string]dynamodb.AttributeValue{
 			"owningUserId": {
-				S: aws.String(owningUserId.String()),
+				S: aws.String(owningUserId),
 			},
 			"bankId": {
 				S: aws.String(bankId.String()),
